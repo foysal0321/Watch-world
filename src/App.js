@@ -1,10 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './share/Navbar/Navbar';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes/Route';
 
 function App() {
   return (
     <div className="">
-      <h1 className='text-3xl text-red-500'>Hello</h1>
+    <RouterProvider router={router}>
+
+    </RouterProvider>
+   
     </div>
   );
 }

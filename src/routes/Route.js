@@ -5,6 +5,9 @@ import Allbuyer from "../components/dashboard/Allbuyer/Allbuyer";
 import Allseller from "../components/dashboard/AllSeller/Allseller";
 import DashMain from "../components/dashboard/DashMain.js/DashMain";
 import Myorders from "../components/dashboard/Myorders/Myorders";
+import Dresswatch from "../components/Home/Categori/Dress/Dresswatch";
+import Sportwatch from "../components/Home/Categori/Sport/Sportwatch";
+import Woodwatch from "../components/Home/Categori/Wood/Woodwatch";
 import Home from "../components/Home/Home";
 import DashboardLyout from "../lyout/DashboardLyout";
 import Main from "../lyout/Main";
@@ -26,6 +29,18 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog />
+            },
+            {
+                path: '/dress-watchs',
+                element: <Dresswatch />
+            },
+            {
+                path: '/sport-watchs',
+                element: <Sportwatch />
+            },
+            {
+                path: '/wood-watchs',
+                element: <Woodwatch />
             },
             {
                 path: '/signup',

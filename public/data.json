@@ -1,0 +1,50 @@
+[
+    {
+        "categori_name": "Wood",
+        "watch_name": "Luxury Wood",
+        "img": "https://image.made-in-china.com/202f0j00lthUnfQrVebI/Timepieces-Name-Logo-Custom-Made-Watch-Classic-Men-Women-Wood-Watch.jpg",
+        "resale_price": 90,
+        "orginal_price": 60,
+        "location": "Dhaka",
+        "years_use": "0.7",
+        "time": null,
+        "seller_name": "Tareq",
+        "seller_verify":true
+    }, 
+    {
+        "categori_name": "Sport",
+        "watch_name": "Bobo bird",
+        "img": "https://ph-test-11.slatic.net/p/6a2ecbfbdbd5ff85c869a7351a4e82c0.jpg",
+        "resale_price": 68,
+        "orginal_price": 80,
+        "location": "Comilla",
+        "years_use": "0.4",
+        "time": null,
+        "seller_name": "Hasan",
+        "seller_verify":true
+    },
+    {       
+        "categori_name": "Dress",
+        "watch_name": "Menengraved Watch",
+        "img": "https://i.etsystatic.com/28626720/r/il/425a2e/3022574182/il_fullxfull.3022574182_dwfj.jpg",
+        "resale_price": 60,
+        "orginal_price": 75,
+        "location": "Syhlet",
+        "years_use": "0.5",
+        "time": null,
+        "seller_name": "Rayhan",
+        "seller_verify":true
+    },
+    {
+        "categori_name": "Milltary",
+        "watch_name": "Wooden watch",
+        "img": "https://www.bobobird.com/wp-content/uploads/2019/06/bobo-bird-wooden-watches-for-men-Arthur-Red-sandalwood-S18-1-5.jpg",
+        "resale_price": 50,
+        "orginal_price": 60,
+        "location": "Feni",
+        "years_use": "0.3",
+        "time": null,
+        "seller_name": "Foysal",
+        "seller_verify":true
+    }
+]

@@ -17,7 +17,7 @@ const Signup = () => {
         const email = form.email.value;
         const password = form.password.value;
         const role = form.role.value;
-
+   
         //create user
         crateUser(email,password)
         .then(result=>{
@@ -32,6 +32,13 @@ const Signup = () => {
                 toast.success('Successfully Signup');
                 seterror('')
                 navigate(from, {replace: true})
+                if(role === 'Buyer'){
+                    saveBuyer(name,email,role)
+                }
+                if(role === 'Seller'){
+                    saveSeller(name,email,role)
+                }
+                
             })
             .catch(err=> {
                 seterror(err.message)
@@ -62,6 +69,36 @@ const Signup = () => {
             console.error(err)
         }) 
     };
+
+    const saveBuyer=(name,email,role)=>{
+        const buyer ={name,email,role}
+        fetch(`http://localhost:5000/buyers`,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(buyer)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+        })
+    }
+    //seller
+    const saveSeller=(name,email,role)=>{
+        const seller ={name,email,role}
+        fetch(`http://localhost:5000/seller`,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(seller)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+        })
+    }
 
     return (
     <div className='w-96 mx-auto py-8'>

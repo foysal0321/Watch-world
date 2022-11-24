@@ -24,6 +24,7 @@ const Signin = () => {
             seterror('')
             form.reset();
             navigate(from, {replace: true})
+            
         })
         .catch(err=> {
             seterror(err.message)

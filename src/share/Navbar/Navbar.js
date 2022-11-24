@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Authcontext } from '../../useContext/Context';
 import '../Navbar/Navbar.css'
 
 const Navbar = () => {
+  const {user, logoutUser} = useContext(Authcontext)
 
     const menuitems= <>
         <li><Link to='/'>Home</Link> </li>      
-        <li><Link>Blog</Link> </li>      
-        <li><Link to='/signup'>Signup</Link> </li>              
-        <li><Link to='/signin'>Signin</Link> </li>              
+        <li><Link to='/blog'>Blog</Link> </li>   
+        {
+          user ? 
+          <>
+          <li> <button onClick={logoutUser} className='btn btn-sm btn-secondary lg:mt-2 py-2 text-white rounded-md'>Logout</button> </li> 
+          </>
+          :
+          <> 
+          <li><Link to='/signup'>Signup</Link> </li>              
+          <li><Link to='/signin'>Signin</Link> </li> 
+          </>
+        }   
+                    
         
     </>
 
@@ -23,7 +35,7 @@ const Navbar = () => {
               {menuitems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Watch World</a>
+          <Link to='/' className="btn btn-ghost normal-case text-3xl text-fuchsia-700 font-bold">Watch World</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">

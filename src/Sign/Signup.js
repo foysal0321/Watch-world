@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../useContext/Context';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = () => {
     const {user, crateUser, updateUser, signinGoogle} = useContext(Authcontext);
     const [error ,seterror] = useState('')
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/'
 
     const handleSignup =(e)=>{
         e.preventDefault();
@@ -28,6 +31,7 @@ const Signup = () => {
             .then(()=>{
                 toast.success('Successfully Signup');
                 seterror('')
+                navigate(from, {replace: true})
             })
             .catch(err=> {
                 seterror(err.message)
@@ -49,7 +53,8 @@ const Signup = () => {
         .then(result=>{
             const user = result.user;
             toast.success('Successfully Signup');
-            seterror('')
+            seterror('');
+            navigate(from, {replace: true})
             //console.log(user);
         })
         .catch(err=> {

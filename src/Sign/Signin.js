@@ -1,11 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../useContext/Context';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Signin = () => {
     const {user, signUser, signinGoogle} = useContext(Authcontext);
-    const [error ,seterror] = useState('')
+    const [error ,seterror] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/'
+
+    //user signin
     const handleSignin =(e)=>{
         e.preventDefault()
         const form = e.target;
@@ -17,7 +22,8 @@ const Signin = () => {
             const user = result.user;
             toast.success('Successfully Signin');
             seterror('')
-            form.reset()
+            form.reset();
+            navigate(from, {replace: true})
         })
         .catch(err=> {
             seterror(err.message)
@@ -32,6 +38,7 @@ const Signin = () => {
             const user = result.user;
             toast.success('Successfully Signup');
             seterror('')
+            navigate(from, {replace: true})
             //console.log(user);
         })
         .catch(err=> {
@@ -39,6 +46,7 @@ const Signin = () => {
             console.error(err)
         }) 
     };
+
     return (
         <div className='w-96 mx-auto py-8'>
         <h3 className='text-3xl font-bold text-center py-2'>Log In</h3>

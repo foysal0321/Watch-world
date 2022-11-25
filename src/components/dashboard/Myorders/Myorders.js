@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Myorders = () => {
     const [orders,setorders] = useState([])
@@ -37,7 +38,14 @@ const Myorders = () => {
               <td>{d.item}</td>
               <td>${d.price}</td>
               <td>
-              <button className='btn btn-sm'>pay</button>
+              {
+                d.price && !d.paid && <Link to={`/dashboard/payment/${d._id}`}>
+                <button className='btn btn-sm'>pay</button>
+                </Link>
+              }
+              {
+                d.price && d.paid && <span className='text-green-600 font-bold'>Paid</span>
+              }
               </td>
               
             </tr>)

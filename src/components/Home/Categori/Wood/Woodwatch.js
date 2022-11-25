@@ -12,7 +12,7 @@ const Woodwatch = () => {
         fetch(`http://localhost:5000/wood-watchs`)
         .then(res=>res.json())
         .then(data=> setwood(data))
-    });
+    },[]);
 
     const handleBooking=(e)=>{
         //e.preventDefault()

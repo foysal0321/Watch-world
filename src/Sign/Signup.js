@@ -32,6 +32,7 @@ const Signup = () => {
                 toast.success('Successfully Signup');
                 seterror('')
                 navigate(from, {replace: true})
+                saveUser(name,email,role);
                 if(role === 'Buyer'){
                     saveBuyer(name,email,role)
                 }
@@ -70,6 +71,21 @@ const Signup = () => {
         }) 
     };
 
+    const saveUser=(name,email,role)=>{
+        const user ={name,email,role}
+        fetch(`http://localhost:5000/users`,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+        })
+    }
+    //save buyer
     const saveBuyer=(name,email,role)=>{
         const buyer ={name,email,role}
         fetch(`http://localhost:5000/buyers`,{

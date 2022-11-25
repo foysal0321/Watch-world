@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Authcontext } from '../../../../useContext/Context';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Modal = ({data,setmodal}) => {
     const {user} = useContext(Authcontext)
@@ -33,7 +34,7 @@ const Modal = ({data,setmodal}) => {
         .then(res=>res.json())
         .then(data=>{         
             if(data.acknowledged){
-                 alert('success bokking')
+                 toast.success('Success booking')
                 setmodal(null)
                 //refetch()
             }

@@ -9,6 +9,8 @@ const Allseller = () => {
         .then(data=> setseller(data))
     },[])
 
+    
+
     return (
         <div>
           <h2 className='text-2xl py-4'>All Seller: </h2>
@@ -22,7 +24,7 @@ const Allseller = () => {
     <th>Name</th>
     <th>Email</th>
     <th>Role</th>
-    <th>Delete</th>
+    <th>Action</th>
 
   </tr>
 </thead>
@@ -33,7 +35,11 @@ const Allseller = () => {
          <td>{d.name}</td>
         <td>{d.email}</td>       
         <td>{d.role}</td>       
-        <td><button className='btn-xs btn-warning'>Delete</button></td>
+        <td>
+        
+          <button className='btn-xs btn-warning mx-4'>Delete</button>
+          </td>
+          
     </tr>)
     }
   

@@ -3,6 +3,7 @@ import Blog from "../components/blog/Blog";
 import Addproduct from "../components/dashboard/Addproduct/Addproduct";
 import Allbuyer from "../components/dashboard/Allbuyer/Allbuyer";
 import Allseller from "../components/dashboard/AllSeller/Allseller";
+import Allusers from "../components/dashboard/AllUser/Allusers";
 import DashMain from "../components/dashboard/DashMain.js/DashMain";
 import Myorders from "../components/dashboard/Myorders/Myorders";
 import Payment from "../components/dashboard/Myorders/pament/Payment";
@@ -15,6 +16,7 @@ import Main from "../lyout/Main";
 import Error from "../share/error/Error";
 import Signin from "../Sign/Signin";
 import Signup from "../Sign/Signup";
+import Adminrout from "./Adminrout";
 import PrivetRout from "./PrivetRout";
 
 export const router = createBrowserRouter([
@@ -67,12 +69,19 @@ export const router = createBrowserRouter([
                 element: <Addproduct />
             },
             {
+                path:'/dashboard/all-users',
+                element: <Allusers />
+                //<Adminrout> <Allseller /></Adminrout> 
+            },
+            {
                 path:'/dashboard/all-seller',
                 element: <Allseller />
+                //<Adminrout> <Allseller /></Adminrout> 
             },
             {
                 path:'/dashboard/all-buyer',
                 element: <Allbuyer />
+                //<Adminrout><Allbuyer /></Adminrout> 
             },
             {
                 path: '/dashboard/payment/:id',

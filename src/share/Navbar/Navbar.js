@@ -7,11 +7,12 @@ const Navbar = () => {
   const {user, logoutUser} = useContext(Authcontext)
 
     const menuitems= <>
-        <li><Link to='/'>Home</Link> </li>      
+        <li><Link to='/'>Home</Link> </li>               
         <li><Link to='/blog'>Blog</Link> </li>   
         {
           user ? 
           <>
+           <li><Link to='/dashboard/my-products'>My products</Link> </li>
           <li><Link to='/dashboard'>Dashboard</Link> </li> 
           <li> <button onClick={logoutUser} className='btn btn-sm btn-secondary lg:mt-2 py-2 text-white rounded-md'>Logout</button> </li> 
           </>

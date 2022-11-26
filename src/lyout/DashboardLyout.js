@@ -22,7 +22,7 @@ const DashboardLyout = () => {
                     <li><Link to='/dashboard'>My orders</Link></li>
                    
                           <li><Link to='/dashboard/add-product'>Add Product</Link></li>
-                          {  <>
+                          { isadmin && <>
                             
                             <li><Link to='/dashboard/all-users'>All users</Link></li>
                             <li><Link to='/dashboard/all-seller'>All seller</Link></li>

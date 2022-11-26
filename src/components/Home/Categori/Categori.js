@@ -1,31 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 
 const Categori = () => {
     const [dress,setdress] = useState([])
     const [sport,setsport] = useState([])
     const [wood,setwood] = useState([])
 
-    //dress-watch
-    useEffect(()=>{
-        fetch(`http://localhost:5000/dress-watch`)
-        .then(res=>res.json())
-        .then(data=> setdress(data))
-    },[])
+    const {data: cetagori=[], isLoading, refetch} = useQuery({
+        queryKey: ['doctors'],
+        queryFn: async ()=>{
+            try{
+            const res = await fetch(`http://localhost:5000/cetagory`,)
+            const data = await res.json()
+            return data;
+            }
+            catch{
 
-    ///sport-dress
-    useEffect(()=>{
-        fetch(`http://localhost:5000/sport-watch`)
-        .then(res=>res.json())
-        .then(data=> setsport(data))
-    },[])
+            }          
+        }
+    })
+
+    //dress-watch
+    // useEffect(()=>{
+    //     fetch(`http://localhost:5000/dress-watch`)
+    //     .then(res=>res.json())
+    //     .then(data=> setdress(data))
+    // },[])
+
+    // ///sport-dress
+    // useEffect(()=>{
+    //     fetch(`http://localhost:5000/sport-watch`)
+    //     .then(res=>res.json())
+    //     .then(data=> setsport(data))
+    // },[])
 
     //wood-dress
-    useEffect(()=>{
-        fetch(`http://localhost:5000/wood-watch`)
-        .then(res=>res.json())
-        .then(data=> setwood(data))
-    },[])
+    // useEffect(()=>{
+    //     fetch(`http://localhost:5000/wood-watch`)
+    //     .then(res=>res.json())
+    //     .then(data=> setwood(data))
+    // },[])
     // useEffect(()=>{
     //     fetch(`data.json`)
     //     .then(res=>res.json())
@@ -43,9 +58,9 @@ const Categori = () => {
             
 
          {
-            dress.map(d =>  <div key={d._id} className="card card-compact w-80 bg-base-100 shadow-xl">
+            cetagori.map(d =>  <div key={d._id} className="card card-compact w-80 bg-base-100 shadow-xl">
             <figure><img src={d.img} alt="Shoes" /></figure>
-            <Link to='/dress-watchs'>
+            <Link to={`/cetagory/${d.ceta_id}`}>
             <div className="card-body">
                 <h2 className="card-title">{d.categori_name}</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -58,7 +73,7 @@ const Categori = () => {
             )
          }
          
-         {
+         {/* {
             wood.map(d =>  <div key={d._id} className="card card-compact w-80 bg-base-100 shadow-xl">
             <figure><img src={d.img} alt="Shoes" /></figure>
             <Link to='/wood-watchs'>
@@ -72,9 +87,9 @@ const Categori = () => {
             </Link>
             </div>           
             )
-         }
+         } */}
          
-         {
+         {/* {
             sport.map(d =>  <div key={d._id} className="card card-compact w-80 bg-base-100 shadow-xl">
             <figure><img src={d.img} alt="Shoes" /></figure>
             <Link to='/sport-watchs'>
@@ -88,7 +103,7 @@ const Categori = () => {
             </Link>
             </div>           
             )
-         }        
+         }         */}
         
 
          </div>

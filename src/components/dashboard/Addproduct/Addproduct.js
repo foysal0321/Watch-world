@@ -1,4 +1,5 @@
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Addproduct = () => {
     const handleProduct=(e)=>{
@@ -25,7 +26,28 @@ const Addproduct = () => {
             cetagori: cetagori,
             img: img
         }
-        console.log(addItem);
+
+        fetch(`http://localhost:5000/add-products`,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addItem)
+        })
+        .then(res=>res.json())
+        .then(data=>{         
+            if(data.acknowledged){
+                 toast.success('Success booking')
+                //setmodal(null)
+                //refetch()
+            }
+            else{
+                console.log(data.message);
+            }          
+        })
+       
+
+        //console.log(addItem);
     };
 
     return (

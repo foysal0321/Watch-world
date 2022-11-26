@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/blog/Blog";
 import Addproduct from "../components/dashboard/Addproduct/Addproduct";
+import Myproducts from "../components/dashboard/Addproduct/myProducts/Myproducts";
 import Allbuyer from "../components/dashboard/Allbuyer/Allbuyer";
 import Allseller from "../components/dashboard/AllSeller/Allseller";
 import Allusers from "../components/dashboard/AllUser/Allusers";
@@ -34,17 +35,12 @@ export const router = createBrowserRouter([
                 element: <Blog />
             },
             {
-                path: '/dress-watchs',
-                element: <Dresswatch />
+                path: '/cetagory/:ceta_id',
+                element: <PrivetRout>  <Dresswatch /></PrivetRout>,
+                loader: ({params})=> fetch(`http://localhost:5000/cetagory/${params.ceta_id}`)
             },
-            {
-                path: '/sport-watchs',
-                element: <Sportwatch />
-            },
-            {
-                path: '/wood-watchs',
-                element: <Woodwatch />
-            },
+            
+           
             {
                 path: '/signup',
                 element: <Signup />
@@ -70,18 +66,23 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/dashboard/all-users',
-                element: <Allusers />
-                //<Adminrout> <Allseller /></Adminrout> 
+                element: <Adminrout> <Allusers /></Adminrout>
+                // <Allusers />
             },
             {
                 path:'/dashboard/all-seller',
-                element: <Allseller />
-                //<Adminrout> <Allseller /></Adminrout> 
+                element: <Adminrout> <Allseller /></Adminrout>
+                // <Allseller />
             },
             {
                 path:'/dashboard/all-buyer',
-                element: <Allbuyer />
-                //<Adminrout><Allbuyer /></Adminrout> 
+                element: <Adminrout><Allbuyer /></Adminrout>
+                // <Allbuyer />
+            },
+            {
+                path:'/dashboard/my-products',
+                element: <Adminrout><Myproducts /></Adminrout>
+                // <Allbuyer />
             },
             {
                 path: '/dashboard/payment/:id',

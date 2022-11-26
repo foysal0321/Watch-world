@@ -40,8 +40,7 @@ const Modal = ({data,setmodal}) => {
             }
             else{
                 console.log(data.message);
-            }
-           
+            }          
         })
        
        //console.log(booking);

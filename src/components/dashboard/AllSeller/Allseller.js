@@ -4,7 +4,7 @@ const Allseller = () => {
     const [seller,setseller] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/seller`)
+        fetch(`http://localhost:5000/users/sellers`)
         .then(res=>res.json())
         .then(data=> setseller(data))
     },[])
@@ -13,7 +13,7 @@ const Allseller = () => {
 
     return (
         <div>
-          <h2 className='text-2xl py-4'>All Seller: </h2>
+          <h2 className='text-2xl py-4'>All Seller: {seller.length} </h2>
 
         <div className="overflow-x-auto">
 <table className="table w-full">

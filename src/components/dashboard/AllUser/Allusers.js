@@ -19,8 +19,7 @@ const Allusers = () => {
             }
             catch{
 
-            }
-           
+            }         
         }
     })
 
@@ -45,21 +44,15 @@ const Allusers = () => {
     //delete user
     const deleteUser=(id)=>{
         fetch(`http://localhost:5000/users/${id}`,{
-            method: 'DELETE',
-            headers: {
-                //'authrazation': `bearer ${localStorage.getItem('token')}`
-            }
+            method: 'DELETE',           
         })
         .then(res=>res.json())
         .then(data=>{
             if(data.deletedCount > 0){
                 alert('delete sucess')
                 refetch()
-            }
-           // console.log(data);
-            
-        })
-        
+            }          
+        })       
     }
 
     if(isLoading){

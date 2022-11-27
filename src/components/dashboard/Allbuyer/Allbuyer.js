@@ -7,11 +7,7 @@ const Allbuyer = () => {
         queryKey: ['Buyer'],
         queryFn: async ()=>{
             try{
-            const res = await fetch(`http://localhost:5000/users/buyers`,{            
-                headers: {
-                   // 'authrazation': `bearer ${localStorage.getItem('token')}`
-                }
-            })
+            const res = await fetch(`http://localhost:5000/users/buyers`)
             const data = await res.json()
             return data;
             }

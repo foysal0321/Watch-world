@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../../useContext/Context';
 
 const Addproduct = () => {
     const {user} = useContext(Authcontext)
+    const navigate = useNavigate()
        // console.log(time);
         
      
@@ -48,6 +50,8 @@ const Addproduct = () => {
         .then(data=>{         
             if(data.acknowledged){
                  toast.success('Success booking')
+                 form.reset()
+                 navigate('/dashboard/my-products')
                 //setmodal(null)
                 //refetch()
             }

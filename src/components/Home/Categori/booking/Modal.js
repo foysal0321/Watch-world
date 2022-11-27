@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Authcontext } from '../../../../useContext/Context';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Modal = ({data,setmodal}) => {
     const {user} = useContext(Authcontext)
     const { watch_name, location,resale_price, img} = data;
+    const [disa,setdisa] = useState(true)
+    //console.log(disa);
 //console.log(data);
     const bookingBtn =(e)=>{
         e.preventDefault();
@@ -35,15 +37,17 @@ const Modal = ({data,setmodal}) => {
         .then(data=>{         
             if(data.acknowledged){
                  toast.success('Success booking')
+                  setdisa(false)
                 setmodal(null)
                 //refetch()
+               
+                //console.log(data);
             }
             else{
+               alert(data.message)
                 console.log(data.message);
             }          
         })
-       
-       //console.log(booking);
     }
     return (
         <>
@@ -58,7 +62,8 @@ const Modal = ({data,setmodal}) => {
                 <input name='price' readOnly  type="text" value={`$${resale_price}`} className="input input-bordered w-full " />
                 <input name='phone' type="number" placeholder="Your phone" className="input input-bordered w-full " /> 
                 <input name='location' type="text" placeholder="Location" className="input input-bordered w-full " /> 
-                <input type="submit" value="Submit" className=' w-full btn btn-accent text-white'/>
+                <input type="submit" value="Submit" className=' w-full btn btn-accent text-white '/>
+                
                 </form>
             </div>
             </div> 

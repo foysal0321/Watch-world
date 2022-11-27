@@ -1,46 +1,114 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Authcontext } from '../../../../useContext/Context';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Myproducts = () => {
     const {user} = useContext(Authcontext)
-    const [myProducts,setorders] = useState([])
+    //const [myProducts,setorders] = useState([])
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/products?useR=${user?.email}`)
+    const {data: myProducts = [], isLoading, refetch} = useQuery({
+        queryKey: ['my-products'],
+        queryFn: async ()=>{
+            try{
+            const res = await fetch(`http://localhost:5000/products?useR=${user?.email}`)
+            const data = await res.json()
+            return data;
+            }
+            catch{
+
+            }         
+        }
+    })
+
+    const advertics=(data)=>{
+        const {img,item,price,location,seller,posted,use,categori_name} = data;
+        const adver={
+            img,
+            item,
+            price,
+            location,
+            seller,
+            posted,
+            use,
+            categori_name,
+           email: user?.email
+        }
+        fetch(`http://localhost:5000/advertics`,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(adver)
+        })
         .then(res=>res.json())
-        .then(data=> setorders(data))
-    },[user?.email])
-    //console.log(myProducts);
+        .then(result=>{
+            if(result.acknowledged){
+                toast.success('Success Adverrtics')
+            }
+            else{
+                alert(result.message)
+            }
+        })    
+        .catch(err=>console.error(err))
+    };
 
-    
+    //delete
+    const deleteProduct=(id)=>{
+        fetch(`http://localhost:5000/products/${id}`,{
+            method: 'DELETE',           
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.deletedCount > 0){
+                alert('delete sucess')
+               refetch()
+            }          
+        })       
+    }
+
     return (
         <div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-    {
-        myProducts.map(d => <div key={d._id} className="card card-compact w-80 bg-base-100 shadow-xl">
-        <figure><img src={d.img} alt="Shoes" /></figure>
-        <div className="card-body">
-            <h2 className="card-title">{d.item}</h2>
-            <p>Posted on: {d.posted}</p>
-            {/* <p>location: {d.location}</p>
-            <p>Resale: ${d.resale_price}</p>
-            <p>Orginal: ${d.orginal_price}</p>
-            <p>years of use: {d.years_use}</p>
-            <p>seller's name: {d.seller_name}</p> */}
-            <div className="flex items-start">
-                 <p> seller verify:  </p>
-                 {/* <p><FcApproval /></p> */}
-            </div>
-           
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary w-72">Buy Now</button>
-            </div>
-        </div>
-        </div>
-        )
-     }
-     </div>
+           <h3 className='text-2xl py-2'>My Products: {Myproducts.length}</h3>
+        <div className="overflow-x-auto mt-5">
+        <table className="table w-full">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Avataer</th>
+                <th>Title</th>    
+                <th>Price</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+
+        {
+            myProducts.map((d,i)=> <tr key={i}>
+             <th>{i+1}</th>
+              <td>
+               <div className="avatar">
+                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img src={d.img} />
+                 </div>
+                </div>
+              </td>
+              <td>{d.item}</td>
+              <td>${d.price}</td>
+              <td>
+                Avlabile / sold
+              </td>
+              <td>           
+              <button onClick={()=> advertics(d)} className='btn btn-sm'>Adverrtics</button>
+             <button onClick={()=> deleteProduct(d._id)} className='btn btn-sm btn-info mx-3'>delete</button>
+              </td>
+              
+            </tr>)
+        }
+    </tbody>
+  </table>
+</div>
     </div>
     );
 };

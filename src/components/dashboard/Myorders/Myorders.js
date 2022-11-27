@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Authcontext } from '../../../useContext/Context';
@@ -6,11 +7,16 @@ const Myorders = () => {
   const {user} = useContext(Authcontext);
 
     const [orders,setorders] = useState([]);
-    
+
     useEffect(()=>{
-        fetch(`http://localhost:5000/booking?email=${user?.email}`)
-        .then(res=>res.json())
-        .then(data=> setorders(data))
+      axios.get(`http://localhost:5000/booking?email=${user?.email}`)
+      .then(res=>{
+        setorders(res.data)
+        //console.log(res.data);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
     },[user?.email])
 
     return (

@@ -1,4 +1,36 @@
-# Getting Started with Create React App
+# Project Name
+ *Watch world
+ *It's used products resale side
+ *Use: React, Node, Express, MongoDB, 
+# Client side repo link
+ * https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-foysal0321
+# Sever side repo link
+ * https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-foysal0321
+# Live side  link
+ * 
+# Vercel deployed server  link
+ * 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +99,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->

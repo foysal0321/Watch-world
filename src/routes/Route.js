@@ -39,11 +39,11 @@ export const router = createBrowserRouter([
                 element: <PrivetRout>  <Dresswatch /></PrivetRout>,
                 loader: ({params})=> fetch(`http://localhost:5000/cetagory/${params.ceta_id}`)
             },         
-            {
-                path: '/cetagory/:categori_name',
-                element: <PrivetRout>  <Dresswatch /></PrivetRout>,
-                loader: ({params})=> fetch(`http://localhost:5000/products/${params.categori_name}`)
-            },         
+            // {
+            //     path: '/cetagory/:categori_name',
+            //     element: <PrivetRout>  <Dresswatch /></PrivetRout>,
+            //     loader: ({params})=> fetch(`http://localhost:5000/products/${params.categori_name}`)
+            // },         
            
             {
                 path: '/signup',

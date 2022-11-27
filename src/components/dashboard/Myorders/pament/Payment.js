@@ -6,7 +6,7 @@ import CekckFrom from './CekckFrom';
 
 const stripePromise = loadStripe('pk_test_51M5ucYJBgbucjrBLRJwaiURn5tPhnnX2eF3FJNMM9azJxeJfCNUYFzsDhT8vTEVyE0bqVNGFQZTV3A0ea2W6Le7q0086sfdYLW');
 
-console.log(stripePromise);
+//console.log(stripePromise);
 
 const Payment = () => {
     const booking = useLoaderData()

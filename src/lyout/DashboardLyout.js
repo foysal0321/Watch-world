@@ -9,29 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 const DashboardLyout = () => {
     const {user} = useContext(Authcontext)
     const [isadmin] = Useadmin(user?.email);
-   // const [isSeller] = Useseller(user?.email)
-    const [seller,setseller] = useState([])
-    const [buyer,setbuyer] = useState([])
-    
- 
-   
-
-    useEffect(()=>{
-      fetch(`http://localhost:5000/users/buyers`)
-      .then(res=>res.json())
-      .then(buy=>setbuyer(buy))
-      
-    },[])
-    useEffect(()=>{
-      fetch(`http://localhost:5000/users/sellers`)
-      .then(res=>res.json())
-      .then(sel=>setseller(sel))
-      
-    },[])
-     
-       // console.log(isSeller);
-         //console.log(seller.role);
-      
+    const [isSeller] = Useseller(user?.email)   
 
     return (
         <div>
@@ -45,16 +23,15 @@ const DashboardLyout = () => {
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label> 
                     <ul className="menu p-4 w-80  text-base-content">
                     <li><Link to='/dashboard'>My orders</Link></li>
-                     
-                        
-                         
-                           <li><Link to='/dashboard/add-product'>Add Product</Link></li> 
-                          
-                        
-                          
                                         
+                         {
+                          isSeller && <>
+                           <li><Link to='/dashboard/add-product'>Add Product</Link></li> 
+                          </>
+                         }
+             
                           { isadmin && <>
-                            
+                            <li><Link to='/dashboard/add-product'>Add Product</Link></li> 
                             <li><Link to='/dashboard/all-users'>All users</Link></li>
                             <li><Link to='/dashboard/all-seller'>All seller</Link></li>
                             <li><Link to='/dashboard/all-buyer'>All buyer</Link></li>

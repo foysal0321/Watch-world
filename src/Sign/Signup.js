@@ -8,7 +8,7 @@ const Signup = () => {
     const [error ,seterror] = useState('')
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || '/';
 
     const handleSignup =(e)=>{
         e.preventDefault();
@@ -32,14 +32,8 @@ const Signup = () => {
                 toast.success('Successfully Signup');
                 seterror('')
                 navigate(from, {replace: true})
-                saveUser(name,email,role);
-                if(role === 'Buyer'){
-                    saveBuyer(name,email,role)
-                }
-                if(role === 'Seller'){
-                    saveSeller(name,email,role)
-                }
-                
+                //save user database
+                saveUser(name,email,role);             
             })
             .catch(err=> {
                 seterror(err.message)
@@ -57,13 +51,16 @@ const Signup = () => {
 
     //signup google
     const signupGoogle =()=>{
-        signinGoogle()
+       signinGoogle()
         .then(result=>{
             const user = result.user;
             toast.success('Successfully Signup');
             seterror('');
             navigate(from, {replace: true})
-            //console.log(user);
+            //set user role buyer
+            const role = 'Buyer'
+            saveUser(user.displayName, user.email, role)
+            console.log(user);
         })
         .catch(err=> {
             seterror(err.message)
@@ -71,6 +68,7 @@ const Signup = () => {
         }) 
     };
 
+    //save user database
     const saveUser=(name,email,role)=>{
         const user ={name,email,role}
         fetch(`http://localhost:5000/users`,{
@@ -79,36 +77,6 @@ const Signup = () => {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(user)
-        })
-        .then(res=>res.json())
-        .then(data=>{
-          console.log(data);
-        })
-    }
-    //save buyer
-    const saveBuyer=(name,email,role)=>{
-        const buyer ={name,email,role}
-        fetch(`http://localhost:5000/buyers`,{
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(buyer)
-        })
-        .then(res=>res.json())
-        .then(data=>{
-          console.log(data);
-        })
-    }
-    //seller
-    const saveSeller=(name,email,role)=>{
-        const seller ={name,email,role}
-        fetch(`http://localhost:5000/seller`,{
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(seller)
         })
         .then(res=>res.json())
         .then(data=>{
@@ -139,8 +107,8 @@ const Signup = () => {
         <input type="password" name='password' placeholder="password" className="input input-bordered w-full max-w-xs" /> 
      </div>
      <select name='role' className="select select-bordered w-full max-w-xs mt-3">
-        <option disabled selected>Selected role</option>
-        <option value='Buyer'>Buyer</option>
+        
+        <option selected value='Buyer'>Buyer</option>
         <option value='Seller'>Seller</option>
     </select>
     <p className='text-red-600 py-1'>{error}</p>

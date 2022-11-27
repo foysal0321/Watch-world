@@ -1,7 +1,7 @@
 # Project Name
- *Watch world
- *It's used products resale side
- *Use: React, Node, Express, MongoDB, 
+ * Watch world
+ * It's used products resale side
+ * Use: React, Node, Express, MongoDB, 
 # Client side repo link
  * https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-foysal0321
 # Sever side repo link

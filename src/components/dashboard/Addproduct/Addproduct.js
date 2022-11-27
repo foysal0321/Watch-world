@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { Authcontext } from '../../../useContext/Context';
 
 const Addproduct = () => {
+    const {user} = useContext(Authcontext)
+       // console.log(time);
+        
+     
+
     const handleProduct=(e)=>{
         e.preventDefault()
         const form = e.target;
@@ -13,7 +19,9 @@ const Addproduct = () => {
         const review = form.review.value;
         const seller = form.seller.value;
         const cetagori = form.cetagori.value;
-        const img = form.img.value
+        const img = form.img.value;
+       const useR = user?.email
+        const time = new Date()
 
         const addItem={
             item: item,
@@ -23,11 +31,13 @@ const Addproduct = () => {
             use: use,
             review: review,
             seller: seller,
-            cetagori: cetagori,
-            img: img
+            categori_name: cetagori,
+            img: img,
+            useR: useR,
+            posted: time
         }
 
-        fetch(`http://localhost:5000/add-products`,{
+        fetch(`http://localhost:5000/products/`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -113,7 +123,7 @@ const Addproduct = () => {
     <label className="label">
         <span className="label-text">Photo</span>
     </label>
-        <input name='img' type="file" placeholder="Type here" className="input input-bordered w-full max-w-xs"      
+        <input name='img' type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs"      
             />           
     </div>                
         <input className='btn btn-accent w-80 mt-3' type="submit" value='Add Item'/>

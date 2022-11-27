@@ -5,7 +5,8 @@ import { Authcontext } from '../../../useContext/Context';
 const Myorders = () => {
   const {user} = useContext(Authcontext);
 
-    const [orders,setorders] = useState([])
+    const [orders,setorders] = useState([]);
+    
     useEffect(()=>{
         fetch(`http://localhost:5000/booking?email=${user?.email}`)
         .then(res=>res.json())

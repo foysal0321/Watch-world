@@ -6,6 +6,7 @@ import '../Navbar/Navbar.css'
 const Navbar = () => {
   const {user, logoutUser} = useContext(Authcontext)
 
+
     const menuitems= <>
         <li><Link to='/'>Home</Link> </li>               
         <li><Link to='/blog'>Blog</Link> </li>   

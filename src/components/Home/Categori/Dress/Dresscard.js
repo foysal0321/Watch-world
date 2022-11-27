@@ -13,6 +13,7 @@ const Dresscard = ({data,setmodal}) => {
            <p>Resale: ${resale_price}</p>
            <p>Orginal: ${orginal_price}</p>
            <p>years of use: {years_use}</p>
+           <p>Posted on: 2022-11-26T16:41:33.929Z</p>
            <p>seller's name: {seller_name}</p>
            <div className="flex items-start">
                 <p> seller verify:  </p>

@@ -38,8 +38,12 @@ export const router = createBrowserRouter([
                 path: '/cetagory/:ceta_id',
                 element: <PrivetRout>  <Dresswatch /></PrivetRout>,
                 loader: ({params})=> fetch(`http://localhost:5000/cetagory/${params.ceta_id}`)
-            },
-            
+            },         
+            {
+                path: '/cetagory/:categori_name',
+                element: <PrivetRout>  <Dresswatch /></PrivetRout>,
+                loader: ({params})=> fetch(`http://localhost:5000/products/${params.categori_name}`)
+            },         
            
             {
                 path: '/signup',
@@ -81,7 +85,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/dashboard/my-products',
-                element: <Adminrout><Myproducts /></Adminrout>
+                element:<PrivetRout><Myproducts /></PrivetRout>
                 // <Allbuyer />
             },
             {

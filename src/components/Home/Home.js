@@ -1,4 +1,5 @@
 import React from 'react';
+import Advertis from './advertised/Advertis';
 import Bannar from './bannar/Bannar';
 import Categori from './Categori/Categori';
 import Dresswatch from './Categori/Dress/Dresswatch';
@@ -9,7 +10,7 @@ const Home = () => {
         <div>
             <Bannar />
              <Categori />
-            
+            <Advertis />
             <Section />
            
         </div>

@@ -5,20 +5,23 @@ import { useQuery } from '@tanstack/react-query';
 import { useLoaderData } from 'react-router-dom';
 import Dresscard from './Dresscard';
 import Modal from '../booking/Modal';
+import Myproducts from './Myproducts';
 
 const Dresswatch = () => {
     const data = useLoaderData()
     const [wood,setwood] = useState(data);
     const [modal,setmodal] = useState(null)
-    
-    //console.log(data);
+
+
+//     useEffect(()=>{
+//     fetch(`http://localhost:5000/products/dress`)
+//    .then(res=>res.json())
+//    .then(getData => setdress(getData))
+   
+//     },[])
+ //console.log(dress);
 
     
-    // useEffect(()=>{
-    //     fetch(`http://localhost:5000/dress-watchs`)
-    //     .then(res=>res.json())
-    //     .then(data=> setdress(data))
-    // },[])
     return (
         <div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
@@ -33,6 +36,8 @@ const Dresswatch = () => {
      
         )      
      }
+       
+
      {
         modal && 
         <Modal 
@@ -42,30 +47,10 @@ const Dresswatch = () => {
      }
 
          </div>
+       
         </div>
     );
 };
 
 export default Dresswatch;      
-  {/* {
-            data.map(d => <div key={d._id} className="card card-compact w-80 bg-base-100 shadow-xl">
-            <figure><img src={d.img} alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">{d.watch_name}</h2>
-                <p>location: {d.location}</p>
-                <p>Resale: ${d.resale_price}</p>
-                <p>Orginal: ${d.orginal_price}</p>
-                <p>years of use: {d.years_use}</p>
-                <p>seller's name: {d.seller_name}</p>
-                <div className="flex items-start">
-                     <p> seller verify:  </p>
-                     <p><FcApproval /></p>
-                </div>
-               
-                <div className="card-actions justify-end">
-                <button className="btn btn-primary w-72">Buy Now</button>
-                </div>
-            </div>
-            </div>
-            )
-         } */}
+  

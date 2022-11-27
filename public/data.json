@@ -11,19 +11,22 @@
         "categori_name": "Dress",
         "ceta_id": "1",
         "watch_name": "Luxe Digital",
-        "img": "https://cdn.luxe.digital/media/20220419083019/best-dress-watches-nordgreen-native-review-luxe-digital-780x520.jpg"
+        "img": "https://cdn.luxe.digital/media/20220419083019/best-dress-watches-nordgreen-native-review-luxe-digital-780x520.jpg",
+        "img2": "https://cdn.shopify.com/s/files/1/0593/3282/1164/products/cheetah-watches-cheetah-collection-cheetah-watches-for-men-cheetah-bizet-x3-cheetah-watches-717488_500x500_crop_center.jpg?v=1635334123"
     },
     {
         "categori_name": "Wood",
         "ceta_id": "2",
         "watch_name": "Luxury Wood",
-        "img": "https://image.made-in-china.com/202f0j00lthUnfQrVebI/Timepieces-Name-Logo-Custom-Made-Watch-Classic-Men-Women-Wood-Watch.jpg"
+        "img": "https://image.made-in-china.com/202f0j00lthUnfQrVebI/Timepieces-Name-Logo-Custom-Made-Watch-Classic-Men-Women-Wood-Watch.jpg",
+        "img2": "https://ph-test-11.slatic.net/p/6a2ecbfbdbd5ff85c869a7351a4e82c0.jpg"
     },
     {
         "categori_name": "Sport",
         "ceta_id": "3",
         "watch_name": "LASIKA Digital Sport",
-        "img": "https://en.fjlasika.com/repository/image/d95d93eb-7f49-434b-b5ea-f0c0d6532018.jpg"
+        "img": "https://en.fjlasika.com/repository/image/d95d93eb-7f49-434b-b5ea-f0c0d6532018.jpg",
+        "img2": "https://m.media-amazon.com/images/I/51DRQnPCikL.jpg"
     }
 ],
 

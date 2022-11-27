@@ -28,6 +28,7 @@ const Dresscard = ({data,setmodal}) => {
        
            </div>
        </div>
+       
          </div>
     );
 };

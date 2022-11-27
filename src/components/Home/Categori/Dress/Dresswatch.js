@@ -13,14 +13,6 @@ const Dresswatch = () => {
     const [modal,setmodal] = useState(null)
 
 
-//     useEffect(()=>{
-//     fetch(`http://localhost:5000/products/dress`)
-//    .then(res=>res.json())
-//    .then(getData => setdress(getData))
-   
-//     },[])
- //console.log(dress);
-
     
     return (
         <div>

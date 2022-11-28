@@ -26,23 +26,24 @@ const Addproduct = () => {
         const time = new Date()
 
         const addItem={
-            item: item,
-            price: price,
+            watch_name: item,
+            resale_price: price,
             location: location,
             phone: phone,
-            use: use,
+            years_use: use,
             review: review,
-            seller: seller,
+            seller_name: seller,
             categori_name: cetagori,
             img: img,
             useR: useR,
             posted: time
         }
-
+       
         fetch(`http://localhost:5000/products/`,{
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authrazation': `bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(addItem)
         })

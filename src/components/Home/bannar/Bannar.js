@@ -16,7 +16,7 @@ const Bannar = () => {
     <div className="absolute w-2/5 lg:left-28  top-1/4 info ">
         <h5 className='text-1xl font-bold text-white py-2'>MAM ORIGINALS</h5>
       <h2 className='text-4xl font-bold text-white py-2 '>
-      Unisex Watches
+      Unique Watches
       </h2>
       <p className='text-white py-3'>You do know that they don’t want you to have lunch. <br /> I’m keeping it real with you</p>
        <button className="btn btn-warning mt-3 mr-5">Discover Now</button>
@@ -34,7 +34,7 @@ const Bannar = () => {
     <div className="absolute w-2/5 lg:left-28  top-1/4 info ">
     <h5 className='text-1xl font-bold text-white py-2'>MAM ORIGINALS</h5>
       <h2 className='text-4xl font-bold text-white py-2 '>
-      Unisex Watches
+      Unique Watches
       </h2>
       <p className='text-white py-3'>You do know that they don’t want you to have lunch. <br /> I’m keeping it real with you</p>
        <button className="btn btn-warning mt-3 mr-5">Discover Now</button>
@@ -52,7 +52,7 @@ const Bannar = () => {
     <div className="absolute w-2/5 lg:left-28 top-1/4 info ">
     <h5 className='text-1xl font-bold text-white py-2'>MAM ORIGINALS</h5>
       <h2 className='text-4xl font-bold text-white py-2 '>
-      Unisex Watches
+      Unique Watches
       </h2>
       <p className='text-white py-3'>You do know that they don’t want you to have lunch. <br /> I’m keeping it real with you</p>
        <button className="btn btn-warning mt-3 mr-5">Discover Now</button>

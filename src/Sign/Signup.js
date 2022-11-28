@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../useContext/Context';
 import toast, { Toaster } from 'react-hot-toast';
+import Usetoken from '../hooks/Usetoken';
 
 const Signup = () => {
     const {user, crateUser, updateUser, signinGoogle} = useContext(Authcontext);
@@ -9,6 +10,13 @@ const Signup = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
+    const [createEmail,setemail] = useState('')
+   const [token] = Usetoken(createEmail);
+
+   if(token){
+    navigate('/')
+   }
+   console.log(token);
 
     const handleSignup =(e)=>{
         e.preventDefault();
@@ -31,7 +39,7 @@ const Signup = () => {
             .then(()=>{
                 toast.success('Successfully Signup');
                 seterror('')
-                navigate(from, {replace: true})
+                //navigate(from, {replace: true})
                 //save user database
                 saveUser(name,email,role);             
             })
@@ -48,6 +56,7 @@ const Signup = () => {
         })     
 
     }
+   
 
     //signup google
     const signupGoogle =()=>{
@@ -80,6 +89,7 @@ const Signup = () => {
         })
         .then(res=>res.json())
         .then(data=>{
+            setemail(email)
           console.log(data);
         })
     }

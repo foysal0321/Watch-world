@@ -18,7 +18,7 @@ const Categori = () => {
             }          
         }
     })
-
+//to={`/cetagory/${d.ceta_id}
     return (
         <div>
             <div className="text-center py-12">
@@ -28,7 +28,7 @@ const Categori = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 lg:mx-20">
          {
             cetagori.map(d =>  <div key={d._id} className="card card-compact w-80 bg-base-100 shadow-xl">
-            <Link to={`/cetagory/${d.ceta_id}`}> 
+            <Link to={`/cetagory/${d.categori_name}`}> 
 
              <h2 className="card-title py-4 mx-4 text-3xl font-bold">{d.categori_name}</h2>                  
         <div className="card-body">           

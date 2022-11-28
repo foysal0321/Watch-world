@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { Authcontext } from '../../../useContext/Context';
 
 const Allseller = () => {
-   
+   const {user} = useContext(Authcontext)
 
     const {data: sellers = [], isLoading, refetch} = useQuery({
       queryKey: ['sellers'],
       queryFn: async ()=>{
           try{
-          const res = await fetch(`http://localhost:5000/users/sellers`,{            
-              headers: {
-                 // 'authrazation': `bearer ${localStorage.getItem('token')}`
-              }
-          })
+          const res = await fetch(`http://localhost:5000/users/sellers`)
           const data = await res.json()
           return data;
           }
@@ -21,6 +18,19 @@ const Allseller = () => {
           }         
       }
   })
+
+  const handleVerify = id=>{
+    fetch(`http://localhost:5000/users/admin/${id}`,{
+        method: 'PUT',           
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        if(data.modifiedCount > 0){
+            alert('sucess verify')
+            refetch()
+        }
+    })
+}
 
   //delete user
   const deleteUser=(id)=>{
@@ -40,7 +50,6 @@ if(isLoading){
     return <progress className="progress w-56"></progress>
 }
 
-    
 
     return (
         <div>
@@ -55,6 +64,7 @@ if(isLoading){
     <th>Name</th>
     <th>Email</th>
     <th>Role</th>
+    <th>Verify</th>
     <th>Action</th>
 
   </tr>
@@ -65,7 +75,14 @@ if(isLoading){
         <td>{i+1}</td>
          <td>{d.name}</td>
         <td>{d.email}</td>       
-        <td>{d.role}</td>       
+        <td>{d.role}</td>   
+        <td>
+          {
+            
+            <button onClick={()=> handleVerify(d._id)} className='btn-xs btn-primary'>Verify now</button>  
+          }   
+            
+            </td>    
         <td>
         {
         d?.role !== 'admin' && <button onClick={()=> deleteUser(d._id)} className='btn-xs btn-warning mx-4'>Delete</button>

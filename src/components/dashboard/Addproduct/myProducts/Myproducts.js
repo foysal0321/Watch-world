@@ -11,7 +11,11 @@ const Myproducts = () => {
         queryKey: ['my-products'],
         queryFn: async ()=>{
             try{
-            const res = await fetch(`http://localhost:5000/products?useR=${user?.email}`)
+            const res = await fetch(`http://localhost:5000/products?useR=${user?.email}`,{
+                headers: {
+                    'authrazation': `bearer ${localStorage.getItem('token')}`
+                  }
+            })
             const data = await res.json()
             return data;
             }
@@ -22,15 +26,15 @@ const Myproducts = () => {
     })
 
     const advertics=(data)=>{
-        const {img,item,price,location,seller,posted,use,categori_name} = data;
+        const {img,watch_name,resale_price,location,seller_name,posted,years_use,categori_name} = data;
         const adver={
             img,
-            item,
-            price,
+            watch_name,
+            resale_price,
             location,
-            seller,
+            seller_name,
             posted,
-            use,
+            years_use,
             categori_name,
            email: user?.email
         }
@@ -56,7 +60,10 @@ const Myproducts = () => {
     //delete
     const deleteProduct=(id)=>{
         fetch(`http://localhost:5000/products/${id}`,{
-            method: 'DELETE',           
+            method: 'DELETE',
+            headers: {
+                'authrazation': `bearer ${localStorage.getItem('token')}`
+              }           
         })
         .then(res=>res.json())
         .then(data=>{
@@ -94,7 +101,7 @@ const Myproducts = () => {
                  </div>
                 </div>
               </td>
-              <td>{d.item}</td>
+              <td>{d.watch_name}</td>
               <td>${d.price}</td>
               <td>
                 Avlabile / sold

@@ -4,7 +4,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { useLoaderData } from 'react-router-dom';
 import CekckFrom from './CekckFrom';
 
-const stripePromise = loadStripe('pk_test_51M5ucYJBgbucjrBLRJwaiURn5tPhnnX2eF3FJNMM9azJxeJfCNUYFzsDhT8vTEVyE0bqVNGFQZTV3A0ea2W6Le7q0086sfdYLW');
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
 
 //console.log(stripePromise);
 

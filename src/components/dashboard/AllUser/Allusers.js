@@ -26,14 +26,13 @@ const Allusers = () => {
     //make admin
     const handleMakeadmin = id=>{
         fetch(`http://localhost:5000/users/admin/${id}`,{
-            method: 'PUT',
+            method: 'PUT', 
             headers: {
-                //'authrazation': `bearer ${localStorage.getItem('token')}`
-              }
+                'authrazation': `bearer ${localStorage.getItem('token')}`
+              }          
         })
         .then(res=>res.json())
         .then(data=>{
-            //console.log(data);
             if(data.modifiedCount > 0){
                 alert('sucess admin')
                 refetch()

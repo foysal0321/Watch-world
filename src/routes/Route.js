@@ -34,16 +34,17 @@ export const router = createBrowserRouter([
                 path: '/blog',
                 element: <Blog />
             },
-            {
-                path: '/cetagory/:ceta_id',
-                element: <PrivetRout>  <Dresswatch /></PrivetRout>,
-                loader: ({params})=> fetch(`http://localhost:5000/cetagory/${params.ceta_id}`)
-            },         
             // {
-            //     path: '/cetagory/:categori_name',
+            //     path: '/cetagory/:ceta_id',
             //     element: <PrivetRout>  <Dresswatch /></PrivetRout>,
-            //     loader: ({params})=> fetch(`http://localhost:5000/products/${params.categori_name}`)
+            //     loader: ({params})=> fetch(`http://localhost:5000/cetagory/${params.ceta_id}`)
             // },         
+            {
+                path: '/cetagory/:categori_name',
+                element: <PrivetRout>  <Dresswatch /></PrivetRout>,
+                loader: ({params})=> fetch(`http://localhost:5000/cetagory/${params.categori_name}`)
+            },         
+                 
            
             {
                 path: '/signup',

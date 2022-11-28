@@ -36,10 +36,7 @@ const DashboardLyout = () => {
                             <li><Link to='/dashboard/all-seller'>All seller</Link></li>
                             <li><Link to='/dashboard/all-buyer'>All buyer</Link></li>
                             </>
-                          }
-                         
-                        
-                                                                            
+                          }                                                                           
                     </ul>           
                 </div>
               </div>        

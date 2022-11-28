@@ -9,7 +9,11 @@ const Myorders = () => {
     const [orders,setorders] = useState([]);
 
     useEffect(()=>{
-      axios.get(`http://localhost:5000/booking?email=${user?.email}`)
+      axios.get(`http://localhost:5000/booking?email=${user?.email}`,{
+        headers: {
+          'authrazation': `bearer ${localStorage.getItem('token')}`
+        }
+      })
       .then(res=>{
         setorders(res.data)
         //console.log(res.data);
@@ -21,7 +25,7 @@ const Myorders = () => {
 
     return (
         <div>
-        <h3 className='text-2xl py-2'>My orders: </h3>
+        <h3 className='text-2xl py-2'>My orders: {orders.length}</h3>
         <div className="overflow-x-auto mt-5">
         <table className="table w-full">
             <thead>
@@ -49,7 +53,7 @@ const Myorders = () => {
               <td>${d.price}</td>
               <td>
               {
-                d.price && !d.paid && <Link to={`/dashboard/payment/${d._id}`}>
+                d.resale_price && !d.paid && <Link to={`/dashboard/payment/${d._id}`}>
                 <button className='btn btn-sm'>pay</button>
                 </Link>
               }

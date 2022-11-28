@@ -1,11 +1,23 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import Useadmin from '../../hooks/Useadmin';
+import Useseller from '../../hooks/Useseller';
 import { Authcontext } from '../../useContext/Context';
 import '../Navbar/Navbar.css'
 
 const Navbar = () => {
   const {user, logoutUser} = useContext(Authcontext)
+  const [isadmin] = Useadmin(user?.email);
+  const [isSeller] = Useseller(user?.email)  
 
+  const logOut=()=>{
+    logoutUser()
+    .then(result=>{ })
+    .catch(err=>{
+        console.error(err);
+    })
+  }
+  
 
     const menuitems= <>
         <li><Link to='/'>Home</Link> </li>               
@@ -13,9 +25,14 @@ const Navbar = () => {
         {
           user ? 
           <>
-           <li><Link to='/dashboard/my-products'>My products</Link> </li>
+          {
+            isSeller && <li><Link to='/dashboard/my-products'>My products</Link> </li>
+          }
+          {
+            isadmin && <li><Link to='/dashboard/my-products'>My products</Link> </li>
+          }          
           <li><Link to='/dashboard'>Dashboard</Link> </li> 
-          <li> <button onClick={logoutUser} className='btn btn-sm btn-secondary lg:mt-2 py-2 text-white rounded-md'>Logout</button> </li> 
+          <li> <button onClick={logOut} className='btn btn-sm btn-secondary lg:mt-2 py-2 text-white rounded-md'>Logout</button> </li> 
           </>
           :
           <> 

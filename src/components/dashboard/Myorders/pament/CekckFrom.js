@@ -19,7 +19,7 @@ const CekckFrom = ({booking}) => {
           method: "POST",
           headers: { 
             "Content-Type": "application/json",
-            //'authrazation': `bearer ${localStorage.getItem('token')}`
+            'authrazation': `bearer ${localStorage.getItem('token')}`
          },
           body: JSON.stringify({ price }),
         })

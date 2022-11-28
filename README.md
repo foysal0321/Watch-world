@@ -11,7 +11,7 @@
 # Vercel deployed server  link
  * https://watch-world.vercel.app/
  # admin user
-  adminEmail: <web102@gmail.com>
+  adminEmail: <web302@gmail.com>
   adminPassword: <111111>
  
 

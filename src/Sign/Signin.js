@@ -13,9 +13,9 @@ const Signin = () => {
     const [logEmail,setLogemail] = useState('')
     const [token] = Usetoken(logEmail)
 
-    if(token){
-        navigate(from, {replace: true})
-    }
+    // if(token){
+    //     navigate(from, {replace: true})
+    // }
 
     //user signin
     const handleSignin =(e)=>{
@@ -30,8 +30,8 @@ const Signin = () => {
             toast.success('Successfully Signin');
             seterror('')
             form.reset();
-            setLogemail(email)
-            //navigate(from, {replace: true})
+            //setLogemail(email)
+            navigate(from, {replace: true})
             
         })
         .catch(err=> {

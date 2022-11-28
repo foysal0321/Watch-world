@@ -13,10 +13,10 @@ const Signup = () => {
     const [createEmail,setemail] = useState('')
    const [token] = Usetoken(createEmail);
 
-   if(token){
-    navigate('/')
-   }
-   console.log(token);
+//    if(token){
+//     navigate('/')
+//    }
+//    console.log(token);
 
     const handleSignup =(e)=>{
         e.preventDefault();
@@ -39,7 +39,7 @@ const Signup = () => {
             .then(()=>{
                 toast.success('Successfully Signup');
                 seterror('')
-                //navigate(from, {replace: true})
+                navigate(from, {replace: true})
                 //save user database
                 saveUser(name,email,role);             
             })

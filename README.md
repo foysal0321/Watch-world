@@ -10,6 +10,10 @@
  * https://watch-world-f53ee.web.app/
 # Vercel deployed server  link
  * https://watch-world.vercel.app/
+ # admin user
+  adminEmail: <web102@gmail.com>
+  adminPassword: <111111>
+ 
 
 
 

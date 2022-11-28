@@ -37,12 +37,12 @@ export const router = createBrowserRouter([
             // {
             //     path: '/cetagory/:ceta_id',
             //     element: <PrivetRout>  <Dresswatch /></PrivetRout>,
-            //     loader: ({params})=> fetch(`http://localhost:5000/cetagory/${params.ceta_id}`)
+            //     loader: ({params})=> fetch(`https://watch-world.vercel.app/cetagory/${params.ceta_id}`)
             // },         
             {
                 path: '/cetagory/:categori_name',
                 element: <PrivetRout>  <Dresswatch /></PrivetRout>,
-                loader: ({params})=> fetch(`http://localhost:5000/cetagory/${params.categori_name}`)
+                loader: ({params})=> fetch(`https://watch-world.vercel.app/cetagory/${params.categori_name}`)
             },         
                  
            
@@ -92,7 +92,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment /> ,
-                loader:({params})=> fetch(`http://localhost:5000/booking/${params.id}`)
+                loader:({params})=> fetch(`https://watch-world.vercel.app/booking/${params.id}`)
             },
         ]
     }

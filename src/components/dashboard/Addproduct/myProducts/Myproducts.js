@@ -11,7 +11,7 @@ const Myproducts = () => {
         queryKey: ['my-products'],
         queryFn: async ()=>{
             try{
-            const res = await fetch(`http://localhost:5000/products?useR=${user?.email}`,{
+            const res = await fetch(`https://watch-world.vercel.app/products?useR=${user?.email}`,{
                 headers: {
                     'authrazation': `bearer ${localStorage.getItem('token')}`
                   }
@@ -38,7 +38,7 @@ const Myproducts = () => {
             categori_name,
            email: user?.email
         }
-        fetch(`http://localhost:5000/advertics`,{
+        fetch(`https://watch-world.vercel.app/advertics`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -59,7 +59,7 @@ const Myproducts = () => {
 
     //delete
     const deleteProduct=(id)=>{
-        fetch(`http://localhost:5000/products/${id}`,{
+        fetch(`https://watch-world.vercel.app/products/${id}`,{
             method: 'DELETE',
             headers: {
                 'authrazation': `bearer ${localStorage.getItem('token')}`

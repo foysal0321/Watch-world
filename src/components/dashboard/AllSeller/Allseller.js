@@ -9,7 +9,7 @@ const Allseller = () => {
       queryKey: ['sellers'],
       queryFn: async ()=>{
           try{
-          const res = await fetch(`http://localhost:5000/users/sellers`)
+          const res = await fetch(`https://watch-world.vercel.app/users/sellers`)
           const data = await res.json()
           return data;
           }
@@ -20,7 +20,7 @@ const Allseller = () => {
   })
 
   const handleVerify = id=>{
-    fetch(`http://localhost:5000/users/admin/${id}`,{
+    fetch(`https://watch-world.vercel.app/users/admin/${id}`,{
         method: 'PUT',           
     })
     .then(res=>res.json())
@@ -34,7 +34,7 @@ const Allseller = () => {
 
   //delete user
   const deleteUser=(id)=>{
-    fetch(`http://localhost:5000/users/${id}`,{
+    fetch(`https://watch-world.vercel.app/users/${id}`,{
         method: 'DELETE',           
     })
     .then(res=>res.json())

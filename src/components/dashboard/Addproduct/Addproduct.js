@@ -39,7 +39,7 @@ const Addproduct = () => {
             posted: time
         }
        
-        fetch(`http://localhost:5000/products/`,{
+        fetch(`https://watch-world.vercel.app/products/`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

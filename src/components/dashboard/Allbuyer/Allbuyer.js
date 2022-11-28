@@ -7,7 +7,7 @@ const Allbuyer = () => {
         queryKey: ['Buyer'],
         queryFn: async ()=>{
             try{
-            const res = await fetch(`http://localhost:5000/users/buyers`)
+            const res = await fetch(`https://watch-world.vercel.app/users/buyers`)
             const data = await res.json()
             return data;
             }
@@ -19,7 +19,7 @@ const Allbuyer = () => {
 
     //delete
     const deleteUser=(id)=>{
-        fetch(`http://localhost:5000/users/${id}`,{
+        fetch(`https://watch-world.vercel.app/users/${id}`,{
             method: 'DELETE',           
         })
         .then(res=>res.json())

@@ -26,7 +26,7 @@ const Modal = ({data,setmodal}) => {
             image: img
         }
 
-        fetch(`http://localhost:5000/booking`,{
+        fetch(`https://watch-world.vercel.app/booking`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

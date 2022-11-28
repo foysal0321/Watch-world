@@ -4,7 +4,7 @@ const Myproducts = () => {
     const [dress,setdress] = useState([])
 
 //     useEffect(()=>{
-//     fetch(`http://localhost:5000/products/dress`)
+//     fetch(`https://watch-world.vercel.app/products/dress`)
 //    .then(res=>res.json())
 //    .then(getData => setdress(getData))
    

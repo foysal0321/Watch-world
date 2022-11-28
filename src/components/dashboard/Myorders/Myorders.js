@@ -9,7 +9,7 @@ const Myorders = () => {
     const [orders,setorders] = useState([]);
 
     useEffect(()=>{
-      axios.get(`http://localhost:5000/booking?email=${user?.email}`,{
+      axios.get(`https://watch-world.vercel.app/booking?email=${user?.email}`,{
         headers: {
           'authrazation': `bearer ${localStorage.getItem('token')}`
         }

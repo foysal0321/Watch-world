@@ -9,7 +9,7 @@ const Allusers = () => {
         queryKey: ['users'],
         queryFn: async ()=>{
             try{
-            const res = await fetch(`http://localhost:5000/users`,{            
+            const res = await fetch(`https://watch-world.vercel.app/users`,{            
                 headers: {
                    // 'authrazation': `bearer ${localStorage.getItem('token')}`
                 }
@@ -25,7 +25,7 @@ const Allusers = () => {
 
     //make admin
     const handleMakeadmin = id=>{
-        fetch(`http://localhost:5000/users/admin/${id}`,{
+        fetch(`https://watch-world.vercel.app/users/admin/${id}`,{
             method: 'PUT', 
             headers: {
                 'authrazation': `bearer ${localStorage.getItem('token')}`
@@ -42,7 +42,7 @@ const Allusers = () => {
 
     //delete user
     const deleteUser=(id)=>{
-        fetch(`http://localhost:5000/users/${id}`,{
+        fetch(`https://watch-world.vercel.app/users/${id}`,{
             method: 'DELETE',           
         })
         .then(res=>res.json())

@@ -9,7 +9,7 @@ const Categori = () => {
         queryKey: ['doctors'],
         queryFn: async ()=>{
             try{
-            const res = await fetch(`http://localhost:5000/cetagory`,)
+            const res = await fetch(`https://watch-world.vercel.app/cetagory`,)
             const data = await res.json()
             return data;
             }

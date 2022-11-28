@@ -15,7 +15,7 @@ const CekckFrom = ({booking}) => {
    // console.log(booking);
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent',{
+        fetch('https://watch-world.vercel.app/create-payment-intent',{
           method: "POST",
           headers: { 
             "Content-Type": "application/json",
@@ -85,7 +85,7 @@ const CekckFrom = ({booking}) => {
                     bookingId: _id
                 }
                 //store payment database
-                fetch(`http://localhost:5000/payments`,{
+                fetch(`https://watch-world.vercel.app/payments`,{
                     method: 'POST',
                     headers:{
                         "content-type": "application/json",

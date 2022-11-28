@@ -5,7 +5,7 @@ const Useadmin = (email) => {
     const [adminLoding,setadminLoding] = useState(true)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/users/admin/${email}`)
+        fetch(`https://watch-world.vercel.app/users/admin/${email}`)
         .then(res=>res.json())
         .then(data=>{
            // console.log(data);

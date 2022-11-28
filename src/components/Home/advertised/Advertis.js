@@ -10,7 +10,7 @@ const Advertis = () => {
     const [modal,setmodal] = useState(null)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/advertics?email=${user?.email}`)
+        fetch(`https://watch-world.vercel.app/advertics?email=${user?.email}`)
         .then(res=>res.json())
         .then(data=> setadvercs(data))
     },[user?.email])

@@ -7,9 +7,9 @@
 # Sever side repo link
  * https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-foysal0321
 # Live side  link
- * 
+ * https://watch-world-f53ee.web.app/
 # Vercel deployed server  link
- * 
+ * https://watch-world.vercel.app/
 
 
 

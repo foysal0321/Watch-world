@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react"
 
-const Useadmin = (email) => {
+function Useadmin (email){
     const [isadmin,setisadmn] = useState(false)
     const [adminLoding,setadminLoding] = useState(true)
 
     useEffect(()=>{
-        fetch(`https://watch-world.vercel.app/users/admin/${email}`)
+        fetch(`https://doctors-protal-server-eight.vercel.app/users/admin/${email}`)
         .then(res=>res.json())
         .then(data=>{
            // console.log(data);
@@ -14,6 +14,5 @@ const Useadmin = (email) => {
         })
     },[email])
     return [isadmin, adminLoding]
-};
-
-export default Useadmin;
+}
+export default Useadmin

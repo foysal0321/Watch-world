@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react"
 
-const Usetoken = (email) => {
+const UseToken =(email)=>{
     const [token,settoken] = useState('');
 
     useEffect(()=>{
         if(email){
-            fetch(`https://watch-world.vercel.app/jwt?email=${email}`)
+            fetch(`https://doctors-protal-server-eight.vercel.app/jwt?email=${email}`)
             .then(res=>res.json())
             .then(data=>{
                 if(data.acessToken){
@@ -16,6 +16,6 @@ const Usetoken = (email) => {
         }      
     },[email])
     return [token]
-};
+}
 
-export default Usetoken;
+export default UseToken

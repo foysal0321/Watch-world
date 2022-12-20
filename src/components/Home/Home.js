@@ -1,18 +1,19 @@
 import React from 'react';
-import Advertis from './advertised/Advertis';
-import Bannar from './bannar/Bannar';
-import Categori from './Categori/Categori';
-import Dresswatch from './Categori/Dress/Dresswatch';
-import Section from './section/Section';
+import Apporment from './Apporment';
+import Bannar from './Bannar';
+import Cards from './Cards';
+import InfoCards from './InfoCards';
+import Services from './Services';
+import Testimonil from './testimoniel/Testimonil';
 
 const Home = () => {
     return (
-        <div>
+        <div className='mx-5'>
             <Bannar />
-             <Categori />
-            <Advertis />
-            <Section />
-           
+            <Cards />
+            <Services />
+            <Apporment />
+            <Testimonil />
         </div>
     );
 };

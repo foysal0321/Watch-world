@@ -1,15 +1,19 @@
-import { RouterProvider } from 'react-router-dom';
+import logo from './logo.svg';
 import './App.css';
-import router from './route/Route';
+import Navbar from './share/Navbar/Navbar';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes/Route';
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div className='max-w-[1240px] mx-auto'>
-     <RouterProvider router={router}></RouterProvider>
+    <div className="">
+    <RouterProvider router={router}>
+     
+    </RouterProvider>
+     <Toaster />
     </div>
   );
 }
 
 export default App;
-
-//firebase project name = form-auth

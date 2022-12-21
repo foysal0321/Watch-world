@@ -1,0 +1,163 @@
+
+
+
+
+
+
+[
+    [
+    {
+        "categori_name": "Dress",
+        "ceta_id": "1",
+        "watch_name": "Luxe Digital",
+        "img": "https://cdn.luxe.digital/media/20220419083019/best-dress-watches-nordgreen-native-review-luxe-digital-780x520.jpg",
+        "img2": "https://cdn.shopify.com/s/files/1/0593/3282/1164/products/cheetah-watches-cheetah-collection-cheetah-watches-for-men-cheetah-bizet-x3-cheetah-watches-717488_500x500_crop_center.jpg?v=1635334123"
+    },
+    {
+        "categori_name": "Wood",
+        "ceta_id": "2",
+        "watch_name": "Luxury Wood",
+        "img": "https://image.made-in-china.com/202f0j00lthUnfQrVebI/Timepieces-Name-Logo-Custom-Made-Watch-Classic-Men-Women-Wood-Watch.jpg",
+        "img2": "https://ph-test-11.slatic.net/p/6a2ecbfbdbd5ff85c869a7351a4e82c0.jpg"
+    },
+    {
+        "categori_name": "Sport",
+        "ceta_id": "3",
+        "watch_name": "LASIKA Digital Sport",
+        "img": "https://en.fjlasika.com/repository/image/d95d93eb-7f49-434b-b5ea-f0c0d6532018.jpg",
+        "img2": "https://m.media-amazon.com/images/I/51DRQnPCikL.jpg"
+    }
+],
+
+    {
+        "categori_name": "Dress",
+        "ceta_id": "1",
+        "watch_name": "Luxe Digital",
+        "img": "https://cdn.luxe.digital/media/20220419083019/best-dress-watches-nordgreen-native-review-luxe-digital-780x520.jpg",
+        "resale_price": 60,
+        "orginal_price": 90,
+        "location": "Dhaka",
+        "years_use": "0.7",
+        "time": null,
+        "seller_name": "Tareq",
+        "seller_verify":true
+    }, 
+    {
+        "categori_name": "Dress",
+        "ceta_id": "1",
+        "watch_name": "Black leather",
+        "img": "https://cdn.shopify.com/s/files/1/0593/3282/1164/products/cheetah-watches-cheetah-collection-cheetah-watches-for-men-cheetah-bizet-x3-cheetah-watches-717488_500x500_crop_center.jpg?v=1635334123",
+        "resale_price": 50,
+        "orginal_price": 65,
+        "location": "Comilla",
+        "years_use": "0.7",
+        "time": null,
+        "seller_name": "Israq",
+        "seller_verify":true
+    }, 
+    {
+        "categori_name": "Dress",
+        "ceta_id": "1",
+        "watch_name": "Skmei",
+        "img": "https://images.yaoota.com/7etLkDMJSWS9coqTMeJzuwNAfSk=/trim/yaootaweb-production-sa/media/crawledproductimages/4e34f2c730b43a7de56ca24bf54422210dc2a68c.jpg",
+        "resale_price": 40,
+        "orginal_price": 55,
+        "location": "Comilla",
+        "years_use": "0.7",
+        "time": null,
+        "seller_name": "Rafi",
+        "seller_verify":true
+    }, 
+    {
+        "categori_name": "Wood",
+        "ceta_id": "2",
+        "watch_name": "Luxury Wood",
+        "img": "https://image.made-in-china.com/202f0j00lthUnfQrVebI/Timepieces-Name-Logo-Custom-Made-Watch-Classic-Men-Women-Wood-Watch.jpg",
+        "resale_price": 90,
+        "orginal_price": 60,
+        "location": "Dhaka",
+        "years_use": "0.7",
+        "time": null,
+        "seller_name": "Tareq",
+        "seller_verify":true
+    }, 
+    {
+        "categori_name": "Wood",
+        "ceta_id": "2",
+        "watch_name": "Bobo bird",
+        "img": "https://ph-test-11.slatic.net/p/6a2ecbfbdbd5ff85c869a7351a4e82c0.jpg",
+        "resale_price": 68,
+        "orginal_price": 80,
+        "location": "Comilla",
+        "years_use": "0.4",
+        "time": null,
+        "seller_name": "Hasan",
+        "seller_verify":true
+    },
+    {       
+        "categori_name": "Wood",
+        "ceta_id": "2",
+        "watch_name": "Menengraved Watch",
+        "img": "https://i.etsystatic.com/28626720/r/il/425a2e/3022574182/il_fullxfull.3022574182_dwfj.jpg",
+        "resale_price": 60,
+        "orginal_price": 75,
+        "location": "Syhlet",
+        "years_use": "0.5",
+        "time": null,
+        "seller_name": "Rayhan",
+        "seller_verify":true
+    },
+    {
+        "categori_name": "Wood",
+        "ceta_id": "2",
+        "watch_name": "Wooden watch",
+        "img": "https://www.bobobird.com/wp-content/uploads/2019/06/bobo-bird-wooden-watches-for-men-Arthur-Red-sandalwood-S18-1-5.jpg",
+        "resale_price": 50,
+        "orginal_price": 60,
+        "location": "Feni",
+        "years_use": "0.3",
+        "time": null,
+        "seller_name": "Foysal",
+        "seller_verify":true
+    },
+    {
+        "categori_name": "Sport",
+        "ceta_id": "3",
+        "watch_name": "LASIKA Digital Sport",
+        "img": "https://en.fjlasika.com/repository/image/d95d93eb-7f49-434b-b5ea-f0c0d6532018.jpg",
+        "resale_price": 50,
+        "orginal_price": 60,
+        "location": "Feni",
+        "years_use": "0.3",
+        "time": null,
+        "seller_name": "Foysal",
+        "seller_verify":true
+    },
+    {
+        "categori_name": "Sport",
+        "ceta_id": "3",
+        "watch_name": "Digital Quartz",
+        "img": "https://m.media-amazon.com/images/I/51DRQnPCikL.jpg",
+        "resale_price": 70,
+        "orginal_price": 90,
+        "location": "Feni",
+        "years_use": "0.3",
+        "time": null,
+        "seller_name": "Opu",
+        "seller_verify":true
+    },
+    {
+        "categori_name": "Sport",
+        "ceta_id": "3",
+        "watch_name": "Military",
+        "img": "https://dmzr5ikm7nos4.cloudfront.net/content_image/8234f4e0-8608-11ea-8890-3376737a381b/origin.jpg",
+        "resale_price": 60,
+        "orginal_price": 90,
+        "location": "Dhaka",
+        "years_use": "0.4",
+        "time": null,
+        "seller_name": "Niksan",
+        "seller_verify":true
+    }
+    
+]
